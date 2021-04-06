@@ -1,14 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.modelos.grounds;
 
-/**
- *
- * @author manu
- */
+import com.mycompany.modelos.animals.Fish;
+
 public class Water extends Grounds {
+
+    private Fish[] fich; 
+    
+    public Water(String nombre, String color ) {
+        super(nombre, color);
+        
+    }
+    
+    
     
 }

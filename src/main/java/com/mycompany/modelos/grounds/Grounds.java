@@ -11,8 +11,8 @@ package com.mycompany.modelos.grounds;
  */
 public class Grounds {
     
-    private String nombre;
-    private String color; 
+    protected String nombre;
+    protected String color; 
 
     public Grounds(String nombre, String color) {
         this.nombre = nombre;
