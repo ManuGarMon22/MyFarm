@@ -16,11 +16,13 @@ public class NuevoFruto extends Plant {
     
     private int timetoDie;
     
+    //constructor
     public NuevoFruto(String nombre, int tiempoC, int produccion, int productos, int tiempoM ){
         super(nombre, tiempoC, produccion, productos);
         this.timetoDie = tiempoM;
     }
-
+    
+    //getters y setters 
     public int getTimetoDie() {
         return timetoDie;
     }
@@ -45,13 +47,6 @@ public class NuevoFruto extends Plant {
         this.status = status;
     }
 
-    public PType getType() {
-        return type;
-    }
-
-    public void setType(PType type) {
-        this.type = type;
-    }
 
     public int getTimeToGrow() {
         return timeToGrow;

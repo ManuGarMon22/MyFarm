@@ -6,7 +6,7 @@
 package com.mycompany.modelos.plants;
 
 import com.mycompany.enums.PState;
-import com.mycompany.enums.PType;
+
 
 /**
  *
@@ -35,13 +35,6 @@ public class NuevoGrano extends Plant implements Grains{
         this.status = status;
     }
 
-    public PType getType() {
-        return type;
-    }
-
-    public void setType(PType type) {
-        this.type = type;
-    }
 
     public int getTimeToGrow() {
         return timeToGrow;

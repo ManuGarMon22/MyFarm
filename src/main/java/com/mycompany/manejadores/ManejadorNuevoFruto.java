@@ -5,20 +5,15 @@
  */
 package com.mycompany.manejadores;
 
-import com.mycompany.modelos.*;
-/**
- *
- * @author manu
- */
-public class ManejadorBodega {
-    
-    private Bodega bodega;
-    
 
-    public ManejadorBodega(Bodega bodega) {
-        this.bodega = bodega;
-        
+import com.mycompany.modelos.plants.NuevoFruto;
+
+public class ManejadorNuevoFruto {
+    private NuevoFruto fruta;
+    
+    public ManejadorNuevoFruto (NuevoFruto fruta){
+        this.fruta = fruta;
     }
-    
-    
 }
+
+
