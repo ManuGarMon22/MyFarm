@@ -3,12 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.modelos.plants;
+package com.mycompany.manejadores;
+
+import com.mycompany.myfarm.Game;
 
 /**
  *
  * @author manu
  */
-public class Manzana {
+public class ManejadorGame {
+    
+    
+    
+    
+    
     
 }

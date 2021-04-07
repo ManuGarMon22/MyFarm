@@ -5,10 +5,77 @@
  */
 package com.mycompany.modelos.plants;
 
+import com.mycompany.enums.PState;
+import com.mycompany.enums.PType;
+
 /**
  *
  * @author manu
  */
-public class NuevoFruto {
+public class NuevoFruto extends Plant {
+    
+    private int timetoDie;
+    
+    public NuevoFruto(String nombre, int tiempoC, int produccion, int productos, int tiempoM ){
+        super(nombre, tiempoC, produccion, productos);
+        this.timetoDie = tiempoM;
+    }
+
+    public int getTimetoDie() {
+        return timetoDie;
+    }
+
+    public void setTimetoDie(int timetoDie) {
+        this.timetoDie = timetoDie;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public PState getStatus() {
+        return status;
+    }
+
+    public void setStatus(PState status) {
+        this.status = status;
+    }
+
+    public PType getType() {
+        return type;
+    }
+
+    public void setType(PType type) {
+        this.type = type;
+    }
+
+    public int getTimeToGrow() {
+        return timeToGrow;
+    }
+
+    public void setTimeToGrow(int timeToGrow) {
+        this.timeToGrow = timeToGrow;
+    }
+
+    public int getProduction() {
+        return production;
+    }
+
+    public void setProduction(int production) {
+        this.production = production;
+    }
+
+    public int[] getProduccionDestaze() {
+        return produccionDestaze;
+    }
+
+    public void setProduccionDestaze(int[] produccionDestaze) {
+        this.produccionDestaze = produccionDestaze;
+    }
+    
     
 }

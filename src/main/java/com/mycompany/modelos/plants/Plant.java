@@ -11,23 +11,21 @@ import com.mycompany.enums.*;
  *
  * @author manu
  */
-public class Plant {
+public abstract class Plant {
     
-    private String name; 
-    private PState status;
-    private PType type;
-    private int timeToDie;
-    private int timeToGrow;
-    private int production;
-    private int[] produccionDestaze;
+    protected String name; 
+    protected PState status;
+    protected PType type;
+    protected int timeToGrow;
+    protected int production;
+    protected int[] produccionDestaze;
 
-    public Plant(String name, PType type, int timeToDie, int timeToGrow, int production, int[] produccionDestaze) {
+    public Plant(String name,  int timeToGrow, int production, int produccionDestaze) {
         this.name = name;
         this.status = PState.SEMILLA;
-        this.type = type;
-        this.timeToDie = timeToDie;
         this.timeToGrow = timeToGrow;
         this.production = production;
+        this.produccionDestaze = new int [produccionDestaze];
     }
 
     
@@ -47,22 +45,7 @@ public class Plant {
     public void setStatus(PState status) {
         this.status = status;
     }
-
-    public PType getType() {
-        return type;
-    }
-
-    public void setType(PType type) {
-        this.type = type;
-    }
-
-    public int getTimeToDie() {
-        return timeToDie;
-    }
-
-    public void setTimeToDie(int timeToDie) {
-        this.timeToDie = timeToDie;
-    }
+    
 
     public int getTimeToGrow() {
         return timeToGrow;

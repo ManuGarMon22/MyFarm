@@ -9,6 +9,6 @@ package com.mycompany.modelos.animals;
  *
  * @author manu
  */
-public class Cow {
+public class Cow extends Animal{
     
 }

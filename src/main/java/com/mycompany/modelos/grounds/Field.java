@@ -11,4 +11,9 @@ package com.mycompany.modelos.grounds;
  */
 public class Field {
     
+    public static int cantidadMaxExistente = 40; 
+    
+    
+    
+    
 }

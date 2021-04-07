@@ -11,4 +11,9 @@ package com.mycompany.modelos.plants;
  */
 public interface Fruits {
     
+    void Morir();
+    
+    
+    
+    
 }

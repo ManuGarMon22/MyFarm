@@ -11,4 +11,11 @@ package com.mycompany.modelos.grounds;
  */
 public class Desert {
     
+    public static int cantidadMaxExistente = 25;
+    
+    
+    
 }
+
+
+

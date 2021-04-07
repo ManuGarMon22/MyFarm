@@ -3,14 +3,20 @@ package com.mycompany.modelos;
 
 
 public class Bodega {
-    
+    //comidas
     private int granos = 0;
     private int fruta = 0;
     private int leche = 0;
     private int cuero = 0;
     private int carne = 0;
     private int huevos = 0;
-
+    //ayudas para tierra
+    private int  MejoraTierra1  = 0;
+    private int  MejoraTierra2  = 0;
+    private int  MejoraTierra3  = 0;
+    //
+    
+    
     public int getGranos() {
         return granos;
     }
