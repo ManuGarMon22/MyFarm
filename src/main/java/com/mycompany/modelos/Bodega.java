@@ -4,6 +4,8 @@ package com.mycompany.modelos;
 import com.mycompany.modelos.animals.Food;
 import com.mycompany.modelos.plants.*;
 
+import org.graalvm.compiler.java.BytecodeParserOptions_OptionDescriptors;
+
 
 
 public class Bodega {
@@ -27,6 +29,8 @@ public class Bodega {
     private int omni1 = 0;
     private int omni2 = 0;
     private int omni3 = 0;
+
+    private int barcos = 1;
     
     
   
@@ -127,7 +131,14 @@ public class Bodega {
         this.omni3 = omni3;
     }
     
+
+    public int getBarcos(){
+        return this.barcos;
+    }
     
+    public void setBarcos(int barcos){
+        this.barcos = barcos;
+    }
     
     
 }

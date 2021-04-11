@@ -11,6 +11,7 @@ import com.mycompany.frames.*;
 
 public class SuperficieJButton extends JButton implements ActionListener{
     
+    private Player j;
     private Grounds ground;
     private JFrame ventanita;
     
@@ -18,7 +19,7 @@ public class SuperficieJButton extends JButton implements ActionListener{
         super();
         super.addActionListener(this);
         DefinirTipo(tipo);
-        //this.ventanita = new MercadoJFrame(p);
+        this.j = p;
     }
 
     
@@ -26,7 +27,7 @@ public class SuperficieJButton extends JButton implements ActionListener{
     private void DefinirTipo(int numero) {
         switch(numero){
             case 1: super.setBackground(Color.GREEN);                
-                    this.ground = new Grama();       
+                    this.ground = new Grama(j);       
                     super.setText(this.ground.getNombre());             
                 break;
             case 2: super.setBackground(Color.BLUE);
@@ -48,7 +49,7 @@ public class SuperficieJButton extends JButton implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this){
-            ground.getFrame().setVisible(true);
+            this.ventanita.setVisible(true);
 
         }
         

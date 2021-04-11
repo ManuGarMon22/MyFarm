@@ -21,7 +21,6 @@ public class Welcome extends JFrame implements ActionListener {
         this.setBounds(0,0,500, 500);//establecer tamaño de la ventana
         this.setResizable(false);// Codigo para no cambiar de tamaño la ventana
         this.setLocationRelativeTo(null);// codigo para que la panatalla aparesca en el centro
-        //this.getContentPane().setBackground(Color.ORANGE);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE); // metodo para que el programa termine de ejecutarse con el boton x
         
         this.componentes();
@@ -89,7 +88,7 @@ public class Welcome extends JFrame implements ActionListener {
         b.add(acepted);//agregamos el boton al panel
         
         //Boton crear
-        created = new JButton("crear");//creamos el boton con el texto que llevara dentro
+        created = new JButton("Cerrar");//creamos el boton con el texto que llevara dentro
         created.setBounds(50, 400, 75, 30);//dimensionamos el boton
         created.addActionListener(this);//amplementamos accion al boton
         b.add(created);//agregamos el boton al panel
@@ -115,15 +114,10 @@ public class Welcome extends JFrame implements ActionListener {
                 Game game = new Game(this.name, this.nick);
                 ManejadorGame juego= new ManejadorGame(game);
                 juego.starGame();
-                
-                
-                //Suelos suelo = new Suelos();
-                //suelo.setVisible(true);
-                
             }
         } else if( e.getSource() == created){
             
-        } else if (e.getSource() == created){
+        
         
         }
     }

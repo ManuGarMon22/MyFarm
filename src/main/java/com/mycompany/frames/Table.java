@@ -11,6 +11,7 @@ import com.mycompany.myfarm.Game;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import com.mycompany.frames.*;
 /**
  *
  * @author manu
@@ -25,7 +26,7 @@ public class Table extends JFrame implements ActionListener {
     private Player jugador;
     private Game juego;
     private JLabel vida;
-    private JLabel tiempo;
+    private JLabel oroLabel;
     private JFrame mercado;
 
     
@@ -44,7 +45,7 @@ public class Table extends JFrame implements ActionListener {
         this.add(base);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE); // metodo para que el programa termine de ejecutarse con el boton x
     
-        this.mercado = new MercadoJFrame(this.jugador);
+        
         this.suelo = new Suelos(this.jugador);
         this.base.add(suelo);
         this.AgregarBotones();
@@ -57,10 +58,11 @@ public class Table extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == ComprarTerreno){
             if (this.jugador.getGold()<100){
-                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para comprar otro terreno");
+                JOptionPane.showMessageDialog(null, "No cuentas con oro suficiente para comprar otro terreno");
             }else{    
                 this.suelo.HablitiarNuevaCasilla();
                 this.jugador.setGold(jugador.getGold()-100);
+                
                 if(this.suelo.getCasillasHabilitadas()>=60){
                     this.ComprarTerreno.setEnabled(false);
                 }
@@ -70,9 +72,10 @@ public class Table extends JFrame implements ActionListener {
             this.juego.getPlayer().setGold(juego.getPlayer().getGold()+100);
            
         }else if(e.getSource() == mer){
+            this.mercado = new MercadoJFrame(this.juego.getPlayer());
             this.mercado.setVisible(true);
         }
-        
+        this.oroLabel.setText("Oro disponible:  " +this.jugador.getGold());
     }
         
     public void AgregarBotones(){
@@ -97,9 +100,9 @@ public class Table extends JFrame implements ActionListener {
         vida.setBounds(10, 630, 200, 30);
         this.base.add(vida);
         
-        tiempo = new JLabel("Oro disponible:  " +this.jugador.getGold());
-        tiempo.setBounds(300, 630, 200, 30);
-        this.base.add(tiempo);
+        oroLabel = new JLabel("Oro disponible:  " +this.jugador.getGold());
+        oroLabel.setBounds(300, 630, 200, 30);
+        this.base.add(oroLabel);
         
     }
     

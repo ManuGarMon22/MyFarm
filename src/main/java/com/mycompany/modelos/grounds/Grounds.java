@@ -5,13 +5,15 @@
  */
 package com.mycompany.modelos.grounds;
 
+import javax.swing.JFrame;
+
 import com.mycompany.enums.*;
 import com.mycompany.frames.*;
 
 public abstract class Grounds {
     
     protected SGround state;
-    
+    protected JFrame ventana;
     protected String nombre;
 
     public Grounds(String nombre) {
@@ -35,6 +37,11 @@ public abstract class Grounds {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+
+    public JFrame getVentana() {
+        return ventana;
     }
     
     

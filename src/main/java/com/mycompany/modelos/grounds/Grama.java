@@ -6,8 +6,7 @@
 package com.mycompany.modelos.grounds;
 
 import com.mycompany.enums.GroundMejora;
-
-import com.mycompany.frames.SuperficieJButton;
+import com.mycompany.frames.*;
 
 /**
  *
@@ -16,16 +15,17 @@ import com.mycompany.frames.SuperficieJButton;
 public class Grama extends Grounds{
     
     public static int cantidadMaxExistente = 40; 
-    public boolean parcela;
-    public GroundMejora tipoMejora;
-    
+    private boolean parcela;
+    private GroundMejora tipoMejora;
+    private JFrame ventana;
+    private Player jugador;
 
 
-    public Grama() {
+    public Grama(Player j) {
         super("Grama");
         this.parcela = false;
         this.tipoMejora = GroundMejora.NORMAL;
-        
+        this.ventana = new OpcionesGrama()
     }
 
     public static int getCantidadMaxExistente() {

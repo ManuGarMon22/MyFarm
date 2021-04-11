@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import com.mycompany.modelos.*;
+import com.mycompany.modelos.grounds.*;
 import com.mycompany.frames.*;
 
 
@@ -24,25 +25,16 @@ public class Suelos extends JPanel  {
     private int  grama =0, agua=0, desierto=0;
     private int casillasHabilitadas, casillasCreadas;
     private JButton botones[]; // arreglo de botones
-    //private boolean alternar = true; // alterna entre dos esquemas
-    //private Container contenedor; // contenedor del marco
-    //private GridLayout cuadricula1; // primer objeto GridLayout
-    private GridLayout cuadricula2; // segundo objeto GridLayout
-    //private JPanel base;
+    
+    private GridLayout cuadricula; 
    
 
-    // constructor sin argumentos
+    // constructor
     public Suelos(Player j){
         this.jugador = j;
-        //this.m = new MercadoJFrame(this.jugador);
-        //super("Terrenos");
         this.setLayout(null);
-        //this.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         this.setBounds(0,0, 550, 630 ); // establece el tamaño del marco
-        //this.setLocationRelativeTo(null);
         
-        //base = new JPanel();
-       // base.setBounds(0,0, 750,500 );
         
         
         ColocarBotones();
@@ -50,9 +42,9 @@ public class Suelos extends JPanel  {
     } 
     
     private void ColocarBotones(){
-        cuadricula2 = new GridLayout(12, 5 ); 
-        setLayout( cuadricula2 );         
-        botones = new JButton[ 60 ]; // crea arreglo de objetos JButton
+        cuadricula = new GridLayout(12, 5 ); 
+        setLayout( cuadricula );         
+        botones = new JButton[60]; // crea arreglo de objetos JButton
         for ( int i = 0; i < 60; i++ ){
             botones[i] = new SuperficieJButton(this.jugador, this.tipoNuevaCasilla());
             this.casillasCreadas++;            
@@ -74,10 +66,8 @@ public class Suelos extends JPanel  {
     
     
     public void HablitiarNuevaCasilla(){
-        
         this.botones[this.casillasHabilitadas].setEnabled(true);
         this.setCasillasHabilitadas(getCasillasHabilitadas()+1);
-        
     }
 
 
@@ -90,17 +80,18 @@ public class Suelos extends JPanel  {
     }
     
     private int tipoNuevaCasilla(){
-        if(desierto < (this.casillasCreadas*0.25) ){
+        if(desierto < (this.casillasCreadas*(0.01 * Desert.getCantidadMaxExistente()))){
             desierto++;
             return 3;
-        }else if(agua < (this.casillasCreadas*0.35)){
+        }else if(agua < (this.casillasCreadas*(0.01 * Water.getCantidadMaxExistente()))){
             agua++;
             return 2;
-        }else{
+        }else if (grama <= (this.casillasCreadas*(0.01 * Grama.getCantidadMaxExistente()))){
             grama++;
             return 1;
+        }else {
+            return 0;
         }
-
     }
     
 }

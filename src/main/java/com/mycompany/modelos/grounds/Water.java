@@ -8,6 +8,7 @@ public class Water extends Grounds {
 
     private int catidadMaxDePeces;
     private Fish[] fish;
+    private boolean barco = false;
     
     
     public Water() {

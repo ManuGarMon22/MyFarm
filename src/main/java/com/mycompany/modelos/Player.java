@@ -56,7 +56,9 @@ public class Player {
         this.vida = vida;
     }
 
-   
+   public Bodega getBodega(){
+       return this.bodega;
+   }
     
     
     
