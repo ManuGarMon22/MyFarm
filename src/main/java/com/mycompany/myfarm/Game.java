@@ -11,16 +11,20 @@ import com.mycompany.frames.*;
 
 public class Game {
     
-    public static int oroGenerado;
-    public static int alimentoGenerado;
-    public static int alimnetoConsumido;
-    public static int celdasCompradas;
+    private boolean activo;
     
-    public static int criasGeneradas;
-    public static int unidadesDestazadas;
+    private int oroGenerado;
+    private int alimentoGenerado;
+    private int alimnetoConsumido;
+    private int celdasCompradas;
     
-    public static int semillasObtenidas;
-    public static int celdasSembradas;
+    private int criasGeneradas;
+    private int unidadesDestazadas;
+    
+    private int semillasObtenidas;
+    private int celdasSembradas;
+    
+    private int duracion = 0;
         
     private Player player;
     
@@ -28,76 +32,72 @@ public class Game {
         this.player = new Player (x,y);
         
     }
-    
-    
-    public void starGame(){
-        Table table = new Table();
-        table.setVisible(true);
-    }
 
-    public static int getOroGenerado() {
+    public int getOroGenerado() {
         return oroGenerado;
     }
 
-    public static void setOroGenerado(int oroGenerado) {
-        Game.oroGenerado = oroGenerado;
+    public void setOroGenerado(int oroGenerado) {
+        this.oroGenerado = oroGenerado;
     }
 
-    public static int getAlimentoGenerado() {
+    public int getAlimentoGenerado() {
         return alimentoGenerado;
     }
 
-    public static void setAlimentoGenerado(int alimentoGenerado) {
-        Game.alimentoGenerado = alimentoGenerado;
+    public void setAlimentoGenerado(int alimentoGenerado) {
+        this.alimentoGenerado = alimentoGenerado;
     }
 
-    public static int getAlimnetoConsumido() {
+    public int getAlimnetoConsumido() {
         return alimnetoConsumido;
     }
 
-    public static void setAlimnetoConsumido(int alimnetoConsumido) {
-        Game.alimnetoConsumido = alimnetoConsumido;
+    public void setAlimnetoConsumido(int alimnetoConsumido) {
+        this.alimnetoConsumido = alimnetoConsumido;
     }
 
-    public static int getCeldasCompradas() {
+    public int getCeldasCompradas() {
         return celdasCompradas;
     }
 
-    public static void setCeldasCompradas(int celdasCompradas) {
-        Game.celdasCompradas = celdasCompradas;
+    public void setCeldasCompradas(int celdasCompradas) {
+        this.celdasCompradas = celdasCompradas;
     }
 
-    public static int getCriasGeneradas() {
+    public int getCriasGeneradas() {
         return criasGeneradas;
     }
 
-    public static void setCriasGeneradas(int criasGeneradas) {
-        Game.criasGeneradas = criasGeneradas;
+    public void setCriasGeneradas(int criasGeneradas) {
+        this.criasGeneradas = criasGeneradas;
     }
 
-    public static int getUnidadesDestazadas() {
+    public int getUnidadesDestazadas() {
         return unidadesDestazadas;
     }
 
-    public static void setUnidadesDestazadas(int unidadesDestazadas) {
-        Game.unidadesDestazadas = unidadesDestazadas;
+    public void setUnidadesDestazadas(int unidadesDestazadas) {
+        this.unidadesDestazadas = unidadesDestazadas;
     }
 
-    public static int getSemillasObtenidas() {
+    public int getSemillasObtenidas() {
         return semillasObtenidas;
     }
 
-    public static void setSemillasObtenidas(int semillasObtenidas) {
-        Game.semillasObtenidas = semillasObtenidas;
+    public void setSemillasObtenidas(int semillasObtenidas) {
+        this.semillasObtenidas = semillasObtenidas;
     }
 
-    public static int getCeldasSembradas() {
+    public int getCeldasSembradas() {
         return celdasSembradas;
     }
 
-    public static void setCeldasSembradas(int celdasSembradas) {
-        Game.celdasSembradas = celdasSembradas;
+    public void setCeldasSembradas(int celdasSembradas) {
+        this.celdasSembradas = celdasSembradas;
     }
+    
+    
 
     public Player getPlayer() {
         return player;
@@ -105,6 +105,22 @@ public class Game {
 
     public void setPlayer(Player player) {
         this.player = player;
+    }
+
+    public int getDuracion() {
+        return duracion;
+    }
+
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
+    }
+
+    public boolean isActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
     }
     
     

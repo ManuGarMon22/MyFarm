@@ -13,10 +13,15 @@ import com.mycompany.enums.*;
  */
 public abstract class Animal {
     
-    
-    private AState state;
-    private int cantidadProductoGenerado;
+    protected int comida;
+    protected AState state;
+    protected int cantidadProductoGenerado;
 
+    public abstract void Comer();
+    
+    public abstract void Morir();
+    
+    public abstract void Producir();
     
     
     

@@ -15,7 +15,7 @@ public abstract class Plant {
     
     protected String name; 
     protected PState status;
-    protected PType type;
+ 
     protected int timeToGrow;
     protected int production;
     protected int[] produccionDestaze;

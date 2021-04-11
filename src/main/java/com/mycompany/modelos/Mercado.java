@@ -3,15 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.modelos.grounds;
+package com.mycompany.modelos;
 
 /**
  *
  * @author manu
  */
-public class Field {
+public class Mercado {
     
-    public static int cantidadMaxExistente = 40; 
+    private Player j;
+    
+    public void Mercado(Player j){
+        this.j = j;
+    }
     
     
     

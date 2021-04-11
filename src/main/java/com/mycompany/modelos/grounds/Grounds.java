@@ -5,19 +5,42 @@
  */
 package com.mycompany.modelos.grounds;
 
-/**
- *
- * @author manu
- */
-public class Grounds {
+import com.mycompany.enums.*;
+import com.mycompany.frames.*;
+
+public abstract class Grounds {
+    
+    protected SGround state;
     
     protected String nombre;
-    protected String color; 
 
-    public Grounds(String nombre, String color) {
+    public Grounds(String nombre) {
+        this.state = SGround.DESHABILITADO;
         this.nombre = nombre;
-        this.color = color;
     }
+
+
+    public SGround getState() {
+        return state;
+    }
+
+    public void setState(SGround state) {
+        this.state = state;
+    }
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
+    
+    
+    
     
     
     

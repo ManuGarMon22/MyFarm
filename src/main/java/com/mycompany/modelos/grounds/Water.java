@@ -7,10 +7,11 @@ public class Water extends Grounds {
     public static int cantidadMaxExistente = 35; 
 
     private int catidadMaxDePeces;
-    private Fish[] fish; 
+    private Fish[] fish;
     
-    public Water(String nombre, String color ) {
-        super(nombre, color);
+    
+    public Water() {
+        super("Agua");
         this.catidadMaxDePeces = 10;
         this.fish = new Fish[this.catidadMaxDePeces];
                 
@@ -40,21 +41,9 @@ public class Water extends Grounds {
         this.fish = fish;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
+    
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
+ 
     
     
     

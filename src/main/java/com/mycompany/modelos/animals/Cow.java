@@ -9,6 +9,21 @@ package com.mycompany.modelos.animals;
  *
  * @author manu
  */
-public class Cow extends Animal{
+public class Cow extends Animal implements Food, MateriaPrima {
+
+    @Override
+    public void Comer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void Morir() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void Producir() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

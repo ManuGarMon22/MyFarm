@@ -13,14 +13,15 @@ package com.mycompany.modelos;
 public class Player {
     private String name;
     private String nickname;
-    private int gold = 50;
+    private int gold = 100;
     private int vida = 100;
-    
+    private Bodega bodega;
     
     
     public Player(String name, String nickname){
         this.name = name;
         this.nickname = nickname;     
+        this.bodega = new Bodega();
     }
 
     public String getName() {
