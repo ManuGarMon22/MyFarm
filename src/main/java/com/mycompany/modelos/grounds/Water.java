@@ -1,7 +1,8 @@
 package com.mycompany.modelos.grounds;
 
 import com.mycompany.modelos.animals.Fish;
-
+import com.mycompany.modelos.*;
+import com.mycompany.frames.*;
 public class Water extends Grounds {
     
     public static int cantidadMaxExistente = 35; 
@@ -11,12 +12,21 @@ public class Water extends Grounds {
     private boolean barco = false;
     
     
-    public Water() {
+    public Water(Player  j) {
         super("Agua");
+        super.ventana = new OpcionesAgua(this , j);
         this.catidadMaxDePeces = 10;
         this.fish = new Fish[this.catidadMaxDePeces];
-                
+         
+        this.GenerarPeces();
     }
+
+    public void GenerarPeces(){
+        for(int i = 0; i< this.catidadMaxDePeces; i++){
+            this.fish[i]= new Fish();
+        }         
+    }
+
 
     public static int getCantidadMaxExistente() {
         return cantidadMaxExistente;
@@ -41,6 +51,15 @@ public class Water extends Grounds {
     public void setFish(Fish[] fish) {
         this.fish = fish;
     }
+
+    public boolean isBarco() {
+        return barco;
+    }
+
+    public void setBarco(boolean barco) {
+        this.barco = barco;
+    }
+    
 
     
 

@@ -1,7 +1,7 @@
 
 package com.mycompany.modelos.grounds;
 
-
+import javax.swing.*;
 
 public class Desert extends Grounds {
     
@@ -9,7 +9,6 @@ public class Desert extends Grounds {
 
     public Desert() {
         super("Desierto");
-
     }
 
     
@@ -20,10 +19,6 @@ public class Desert extends Grounds {
     public static void setCantidadMaxExistente(int cantidadMaxExistente){
         Desert.cantidadMaxExistente = cantidadMaxExistente;
     }
-    
-    
-    
-    
     
     
 }

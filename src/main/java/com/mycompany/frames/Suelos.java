@@ -33,7 +33,7 @@ public class Suelos extends JPanel  {
     public Suelos(Player j){
         this.jugador = j;
         this.setLayout(null);
-        this.setBounds(0,0, 550, 630 ); // establece el tamaño del marco
+        this.setBounds(0,0, 650, 630 ); // establece el tamaño del marco
         
         
         

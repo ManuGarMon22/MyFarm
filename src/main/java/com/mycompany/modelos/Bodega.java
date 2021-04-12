@@ -10,9 +10,9 @@ import org.graalvm.compiler.java.BytecodeParserOptions_OptionDescriptors;
 
 public class Bodega {
     //comidas
-    private Grains granos;
-    private Fruits fruta;
-    private Food leche ;
+    private int granos = 0;
+    private int fruta = 0;
+    private int leche = 0;
     
     private int cuero = 0;
     private int carne = 0;
@@ -30,9 +30,7 @@ public class Bodega {
     private int omni2 = 0;
     private int omni3 = 0;
 
-    private int barcos = 1;
-    
-    
+    private int barcos = 0;
   
 
     public int getCuero() {
@@ -139,6 +137,8 @@ public class Bodega {
     public void setBarcos(int barcos){
         this.barcos = barcos;
     }
+    
+
     
     
 }

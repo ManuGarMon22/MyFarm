@@ -8,22 +8,21 @@ package com.mycompany.manejadores;
 import com.mycompany.frames.Table;
 import com.mycompany.modelos.Player;
 import com.mycompany.myfarm.Game;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import com.mycompany.hilos.*;
 
 /**
  *
  * @author manu
  */
-public class ManejadorGame  {
+public class ManejadorGame{
     
     private Game game;
     private Player JPrincipal;
-    private Thread duracion;
     private Table table ;
     
     public ManejadorGame(Game juego){
         this.game = juego;
+        this.JPrincipal = this.game.getPlayer();
        
     }
     
@@ -33,8 +32,13 @@ public class ManejadorGame  {
         table = new Table( this.game);
         table.setVisible(true);
         
-        
+       
+
+
     }
+
+
+
     
     
     

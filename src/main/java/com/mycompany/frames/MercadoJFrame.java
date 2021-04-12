@@ -14,6 +14,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
     private int precioComida=25, precioBarco= 100, precioFertilizantes = 30;
     private int precioAlimento=25, preciosemillas= 20, precioMP = 30, precioMPventa = 40;
     private int precioPollo=15, precioTernero= 25 ;
+    
     private Player player;
     private JLabel oroLabel;
     private JPanel base, botones1,botones2,botones3,botones4,botones5, botones6 ;
@@ -164,6 +165,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
         this.barco.addActionListener(this);
         this.base.add(this.barco);
         //boton Barco
+
         this.barco = new JButton("Barco");
         this.barco.setBounds(250, 460, 100, 30);
         this.barco.addActionListener(this);
@@ -196,10 +198,10 @@ public class MercadoJFrame extends JFrame implements ActionListener{
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {       
+
         if (e.getSource() == volverButton){
            this.setVisible(false);
-
         }else if(e.getSource() == this.barco){
             if (player.getGold()<precioBarco){
                 JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
@@ -208,7 +210,37 @@ public class MercadoJFrame extends JFrame implements ActionListener{
                 this.player.getBodega().setBarcos(player.getBodega().getBarcos()+1);
                 this.precioBarco=+100;
             }
+        }else if(e.getSource() == this.alimento1){
+            if(player.getGold()<precioAlimento){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioAlimento);
+                this.player.getBodega().setBarcos(player.getBodega().getHerv1()+1);
+            }
+        }else if(e.getSource() == this.alimento2){
+            if(player.getGold()<precioAlimento){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioAlimento);
+                this.player.getBodega().setBarcos(player.getBodega().getHerv2()+1);
+            }
+        }else if(e.getSource() == this.alimento3){
+            if(player.getGold()<precioAlimento){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioAlimento);
+                this.player.getBodega().setBarcos(player.getBodega().getHerv3()+1);
+            }
         }
+
+
+
+
+
+
+
+
+
         this.oroLabel.setText("Oro disponible: "+this.player.getGold());
     }
 

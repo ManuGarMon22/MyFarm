@@ -12,6 +12,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import com.mycompany.frames.*;
+import com.mycompany.hilos.*;
 /**
  *
  * @author manu
@@ -50,6 +51,12 @@ public class Table extends JFrame implements ActionListener {
         this.base.add(suelo);
         this.AgregarBotones();
         this.AgregarEtiqueta();
+
+        Runnable vidaRunnable = new ConteoVida(jugador, this);
+        
+        Thread hilosVida = new Thread(vidaRunnable);
+
+        hilosVida.start();
         
         
     }
@@ -72,7 +79,7 @@ public class Table extends JFrame implements ActionListener {
             this.juego.getPlayer().setGold(juego.getPlayer().getGold()+100);
            
         }else if(e.getSource() == mer){
-            this.mercado = new MercadoJFrame(this.juego.getPlayer());
+            this.mercado = new MercadoJFrame(this.jugador);
             this.mercado.setVisible(true);
         }
         this.oroLabel.setText("Oro disponible:  " +this.jugador.getGold());
@@ -80,17 +87,17 @@ public class Table extends JFrame implements ActionListener {
         
     public void AgregarBotones(){
         this.ComprarTerreno = new JButton("Comprar terreno");
-        this.ComprarTerreno.setBounds(800, 600, 200, 40);
+        this.ComprarTerreno.setBounds(750, 600, 250, 40);
         this.ComprarTerreno.addActionListener(this);
         this.base.add(this.ComprarTerreno);
         
         this.Bodega = new JButton("Bodega");
-        this.Bodega.setBounds(800, 560, 200, 40);
+        this.Bodega.setBounds(750, 560, 250, 40);
         this.Bodega.addActionListener(this);
         this.base.add(this.Bodega);
         
         this.mer = new JButton("Mercado");
-        this.mer.setBounds(800, 520, 200, 40);
+        this.mer.setBounds(750, 520, 250, 40);
         this.mer.addActionListener(this);
         this.base.add(this.mer) ;
       }
@@ -105,6 +112,21 @@ public class Table extends JFrame implements ActionListener {
         this.base.add(oroLabel);
         
     }
-    
+
+    public JLabel getVida() {
+        return vida;
+    }
+
+    public void setVida(JLabel vida) {
+        this.vida = vida;
+    }
+
+    public JLabel getOroLabel() {
+        return oroLabel;
+    }
+
+    public void setOroLabel(JLabel oroLabel) {
+        this.oroLabel = oroLabel;
+    }    
     
 }

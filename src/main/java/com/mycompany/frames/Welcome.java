@@ -88,16 +88,16 @@ public class Welcome extends JFrame implements ActionListener {
         b.add(acepted);//agregamos el boton al panel
         
         //Boton crear
-        created = new JButton("Cerrar");//creamos el boton con el texto que llevara dentro
-        created.setBounds(50, 400, 75, 30);//dimensionamos el boton
+        created = new JButton("Crear");//creamos el boton con el texto que llevara dentro
+        created.setBounds(50, 400, 85, 30);//dimensionamos el boton
         created.addActionListener(this);//amplementamos accion al boton
         b.add(created);//agregamos el boton al panel
         
         //Boton crear
         close = new JButton("cerrar");//creamos el boton con el texto que llevara dentro
-        created.setBounds(50, 400, 75, 30);//dimensionamos el boton
-        created.addActionListener(this);//amplementamos accion al boton
-        b.add(created);//agregamos el boton al panel
+        close.setBounds(375, 400, 85, 30);//dimensionamos el boton
+        close.addActionListener(this);//amplementamos accion al boton
+        b.add(close);//agregamos el boton al panel
         
     }
     
@@ -115,11 +115,8 @@ public class Welcome extends JFrame implements ActionListener {
                 ManejadorGame juego= new ManejadorGame(game);
                 juego.starGame();
             }
-        } else if( e.getSource() == created){
-            
-        
-        
+        }else if( e.getSource() == this.close){
+            System.exit(0);
         }
     }
-    
 }

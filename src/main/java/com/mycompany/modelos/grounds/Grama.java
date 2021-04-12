@@ -7,6 +7,9 @@ package com.mycompany.modelos.grounds;
 
 import com.mycompany.enums.GroundMejora;
 import com.mycompany.frames.*;
+import com.mycompany.modelos.*;
+import com.mycompany.modelos.plants.*;
+import javax.swing.*;
 
 /**
  *
@@ -19,13 +22,14 @@ public class Grama extends Grounds{
     private GroundMejora tipoMejora;
     private JFrame ventana;
     private Player jugador;
-
+    private Plant planta;
 
     public Grama(Player j) {
         super("Grama");
         this.parcela = false;
         this.tipoMejora = GroundMejora.NORMAL;
-        this.ventana = new OpcionesGrama()
+        super.ventana = new OpcionesGrama(j);
+        this.planta = null;
     }
 
     public static int getCantidadMaxExistente() {
@@ -45,23 +49,12 @@ public class Grama extends Grounds{
     }
     
 
-    public String getNombre() {
-        return nombre;
+    public Plant getPlanta() {
+        return planta;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setPlanta(Plant planta) {
+        this.planta = planta;
     }
-    
-       public boolean isParcela() {
-        return parcela;
-    }
-
-    public void setParcela(boolean parcela) {
-        this.parcela = parcela;
-    }
-    
-    
-    
     
 }

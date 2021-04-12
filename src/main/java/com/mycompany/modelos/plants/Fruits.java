@@ -71,7 +71,10 @@ public class Fruits extends Plant implements Comida{
     
     
     
-    
+    public void Crecer (){
+
+
+    }
     
     
     

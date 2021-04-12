@@ -15,6 +15,7 @@ public abstract class Grounds {
     protected SGround state;
     protected JFrame ventana;
     protected String nombre;
+    protected boolean procesando = false;
 
     public Grounds(String nombre) {
         this.state = SGround.DESHABILITADO;
@@ -42,6 +43,21 @@ public abstract class Grounds {
 
     public JFrame getVentana() {
         return ventana;
+    }
+
+
+    public void setVentana(JFrame ventana) {
+        this.ventana = ventana;
+    }
+
+
+    public boolean isProcesando() {
+        return procesando;
+    }
+
+
+    public void setProcesando(boolean procesando) {
+        this.procesando = procesando;
     }
     
     
