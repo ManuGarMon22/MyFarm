@@ -11,19 +11,20 @@ package com.mycompany.modelos;
  * @author manu
  */
 public class Player {
+    //atributos de la clase
     private String name;
     private String nickname;
     private int gold = 100;
     private int vida = 100;
     private Bodega bodega;
     
-    
+    //constructor de la clase
     public Player(String name, String nickname){
         this.name = name;
         this.nickname = nickname;     
         this.bodega = new Bodega();
     }
-
+    //Getters y setters de los atributos
     public String getName() {
         return name;
     }

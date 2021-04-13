@@ -16,7 +16,7 @@ import javax.swing.*;
  */
 public class ProcesoCrecimiento extends Thread {
     
-    private JButton imagenSuelo;
+    private JButton imagenSuelo;//variable a usar
     private Grounds suelo;
     private Plant actual;
 
@@ -25,7 +25,7 @@ public class ProcesoCrecimiento extends Thread {
         this.suelo = suelo;
     }
     
-    
+    //constructor
     public void CrecerGrano(Grains p) throws InterruptedException{
         this.actual = p;
         
@@ -36,7 +36,7 @@ public class ProcesoCrecimiento extends Thread {
             p.setStatus(PState.MUERTE);            
     }
     
-    
+    //metodo para hacer cerer la plantas 
     public void CrecerFruta(Fruits f){
         
     }

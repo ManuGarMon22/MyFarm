@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.mycompany.enums;
 
-/**
- *
- * @author manu
- */
+//clase para definir los 4 posibles estados que puede tener la grama
 public enum GroundMejora {
     UNO, DOS, TRES, NORMAL;
 }

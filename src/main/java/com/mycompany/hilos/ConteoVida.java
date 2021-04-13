@@ -8,21 +8,21 @@ import javax.swing.*;
 import com.mycompany.frames.*;
 
 public class ConteoVida implements Runnable{
-
+    //variables a usar
     private Player jugador;
     private Table table;
     private int segundosParaRestarVida = 3;
     private Game juego;
     private int minutos, segundos;
     private JFrame x;
-
+    //constructor
     public ConteoVida(Player jugador, Table table, Game game, JFrame x){
         this.jugador = jugador;
         this.table = table;
         this.juego = game;
         this.x = x;
     }
-
+    //Metodo para actualizar la vida al igual las etiquetas donde esta se muestra 
     public void ActualizaVida(){
         do{
             try {
@@ -39,7 +39,7 @@ public class ConteoVida implements Runnable{
 
         this.minutos = this.juego.getDuracion()/60;
         this.segundos = this.juego.getDuracion()%60;
-        
+        //mensaje que aparcen al momento que la vida llega a 0
         JOptionPane.showMessageDialog(null,"Oh no! "+this.jugador.getNickname()+", has muerto. Fin del Juego\n La partida duro "+this.minutos+" miuntos y "+this.segundos+" aproximadamente" );
         JOptionPane.showMessageDialog(null,"Gracias por jugar" );
         this.table.setVisible(false);
@@ -48,7 +48,7 @@ public class ConteoVida implements Runnable{
 
     }
 
-
+    //metodo para ser ejecutado en el hilo
     @Override
     public void run() {
         ActualizaVida();

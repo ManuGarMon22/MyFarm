@@ -276,11 +276,11 @@ public class MercadoJFrame extends JFrame implements ActionListener{
                 this.juego.setOroGastado(this.juego.getOroGastado()+this.precioComida);
             }
         }else if(e.getSource() == this.ventaMP){
-            if(player.getBodega().getMP()<=0){
+            if(player.getBodega().getCuero()<=0){
                 JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
             }else{
                 this.player.setGold(player.getGold()+this.precioMPventa);
-                this.player.getBodega().setMP(player.getBodega().getMP()-1);
+                this.player.getBodega().setCuero(player.getBodega().getCuero()-1);
                 this.juego.setOroGenerado(this.juego.getOroGenerado()+40);
             }
         }else if(e.getSource() == this.compraMP){
@@ -288,7 +288,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
             }else{
                 this.player.setGold(player.getGold()-this.precioMP);
-                this.player.getBodega().setMP(player.getBodega().getMP()+1);
+                this.player.getBodega().setCuero(player.getBodega().getCuero()+1);
                 this.juego.setOroGastado(this.juego.getOroGastado()+this.precioMP);
             }
         }else if(e.getSource() == this.cria1){

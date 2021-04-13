@@ -5,11 +5,13 @@
  */
 package com.mycompany.modelos.animals;
 
+import com.mycompany.modelos.Comida;
+
 /**
  *
  * @author manu
  */
-public class Chicken extends Animal implements Food{
+public class Chicken extends Animal implements Comida{
 
     @Override
     public void Comer() {

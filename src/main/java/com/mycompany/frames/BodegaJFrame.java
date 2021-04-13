@@ -5,37 +5,37 @@ import java.awt.event.*;
 import javax.swing.*;
 import com.mycompany.modelos.*;
 import com.mycompany.myfarm.Game;
-
+//clase para mostrar el meni de bodega 
 public class BodegaJFrame extends JFrame implements ActionListener {
 
-    
+    //atributos de la clase para formatar e interuactuar en la ventanta
     private Player player;
     private Game game;
     private JLabel oroLabel;
     private JPanel base, botones1,botones2,botones3,botones4,botones5, botones6 ;
     private JButton volverButton, semilla1, semilla2, cria1, cria2, alimento1, alimento2, alimento3 ;
     private JButton mejora1, mejora2, mejora3, comida1, comida2, comida3, compraMP, ventaMP,alimento4, alimento5, alimento6  ;
-
+    //costructor 
     public BodegaJFrame(Game j){
         this.game = j;
         this.player = j.getPlayer();
-
+        //porpiedades de la ventana
         setLayout(null);
         setTitle("Bodega");
         setBounds(0,0, 500, 550);
         setResizable(false);
         setLocationRelativeTo(null);
-
+        //panel base
         base = new JPanel();
         base.setLayout(null);
         base.setBounds(0,0,this.getWidth(), this.getHeight());
         this.add(base);
-
+        //base para los primeros botones 
         botones1 = new JPanel();
         botones1.setLayout(new GridLayout(1,3));
         botones1.setBounds(10, 45, 480, 30);
         this.base.add(botones1);
-
+        //base para los botones de segunda fila
         botones2 = new JPanel();
         botones2.setLayout(new GridLayout(1,3));
         botones2.setBounds(10, 115, 480, 30);
@@ -120,7 +120,7 @@ public class BodegaJFrame extends JFrame implements ActionListener {
         this.semilla2 = new JButton("Semilla de Fruto = " +this.player.getBodega().getFruta());
         this.botones2.add(this.semilla2);
 
-        this.ventaMP = new JButton("Cuero = " +this.player.getBodega().getMP());
+        this.ventaMP = new JButton("Cuero = " +this.player.getBodega().getCuero());
         this.ventaMP.addActionListener(this);
         this.botones3.add(this.ventaMP);
 

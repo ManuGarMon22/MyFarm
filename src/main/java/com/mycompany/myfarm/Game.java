@@ -10,7 +10,7 @@ import com.mycompany.frames.*;
 
 
 public class Game {
-    
+    //atributos que posee la clase
     private boolean activo;
     
     private int oroGenerado;
@@ -29,11 +29,13 @@ public class Game {
         
     private Player player;
     
+    //constructor de clase que recibe nombre y nick para crear al jugador
     public Game (String x, String y){
         this.player = new Player (x,y);
         
     }
-
+    
+    //getters y setters de la clase
     public int getOroGenerado() {
         return oroGenerado;
     }

@@ -76,7 +76,7 @@ public class Welcome extends JFrame implements ActionListener {
         b.add(textNick);// agregamos a ventana
         
         //etiqueta donde esta el logo
-        ImageIcon imagelogo = new ImageIcon(getClass().getResource("/com/mycompany/images/logo.png"));//definimos el icon para obtener el logo
+        final ImageIcon imagelogo = new ImageIcon(getClass().getResource("Imagen/logo.png"));//definimos el icon para obtener el logo
         logo = new JLabel(imagelogo);//creamos la etiqueta con la imagen dentor de esta
         logo.setBounds(143, 25, 232, 150);//definimos lugar donde aparece y dimensiones dentro de panel base 
         logo.setIcon(new ImageIcon(imagelogo.getImage().getScaledInstance(logo.getWidth(),logo.getHeight(), Image.SCALE_SMOOTH)));//redimensionamos la imagen al tamaño de la etiqueta

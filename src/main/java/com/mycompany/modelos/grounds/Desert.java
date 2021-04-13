@@ -1,8 +1,8 @@
 
 package com.mycompany.modelos.grounds;
 
-import javax.swing.*;
 
+//clase hija de grounds. Define un tipo de terreno
 public class Desert extends Grounds {
     
     public static int cantidadMaxExistente = 25;

@@ -2,14 +2,14 @@
 package com.mycompany.modelos;
 
 public class Bodega {
-    //comidas
+    //semillas
     private int granos = 0;
     private int fruta = 0;
+    //producciones de animales
     private int leche = 0;
-    
-    private int cuero = 0;
     private int carne = 0;
     private int huevos = 0;
+    private int cuero = 0;
     //ayudas para tierra
     private int  MejoraTierra1  = 0;
     private int  MejoraTierra2  = 0;
@@ -25,19 +25,11 @@ public class Bodega {
 
     private int barcos = 0;
 
-    private int MP = 0;
 
     private int pollo = 0;
     private int terneros = 0;
 
-    public int getCuero() {
-        return cuero;
-    }
-
-    public void setCuero(int cuero) {
-        this.cuero = cuero;
-    }
-
+    //getters y setters de todos los atributos de la clase
     public int getCarne() {
         return carne;
     }
@@ -159,13 +151,7 @@ public class Bodega {
         this.leche = leche;
     }
 
-    public int getMP() {
-        return MP;
-    }
-
-    public void setMP(int mP) {
-        MP = mP;
-    }
+  
 
     public int getPollo() {
         return pollo;
@@ -182,6 +168,15 @@ public class Bodega {
     public void setTerneros(int terneros) {
         this.terneros = terneros;
     }
+
+    public int getCuero() {
+        return cuero;
+    }
+
+    public void setCuero(int cuero) {
+        this.cuero = cuero;
+    }
+    
     
     
     

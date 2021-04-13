@@ -8,21 +8,21 @@ package com.mycompany.modelos.grounds;
 import javax.swing.JFrame;
 
 import com.mycompany.enums.*;
-import com.mycompany.frames.*;
 
+//clase padre y abstracta para definir cosa en comun de los terrenos 
 public abstract class Grounds {
-    
+    //atributos 
     protected SGround state;
     protected JFrame ventana;
     protected String nombre;
     protected boolean procesando = false;
-
+    //Costructor 
     public Grounds(String nombre) {
         this.state = SGround.DESHABILITADO;
         this.nombre = nombre;
     }
 
-
+    //getters y setters 
     public SGround getState() {
         return state;
     }

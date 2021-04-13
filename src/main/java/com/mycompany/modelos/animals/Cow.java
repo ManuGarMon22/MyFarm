@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.mycompany.modelos.animals;
 
-/**
- *
- * @author manu
- */
-public class Cow extends Animal implements Food, MateriaPrima {
+import com.mycompany.modelos.Comida;
+
+
+public class Cow extends Animal implements Comida, MateriaPrima {
 
     @Override
     public void Comer() {

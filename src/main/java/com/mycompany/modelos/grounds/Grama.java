@@ -11,19 +11,16 @@ import com.mycompany.modelos.*;
 import com.mycompany.modelos.plants.*;
 import javax.swing.*;
 
-/**
- *
- * @author manu
- */
+//clase para definir otro tipo de terreno 
 public class Grama extends Grounds{
-    
+    //atributos de la clase 
     public static int cantidadMaxExistente = 40; 
     private boolean parcela;
     private GroundMejora tipoMejora;
     private JFrame ventana;
     private Player jugador;
     private Plant planta;
-
+    //Constructor de la clase
     public Grama(Player j) {
         super("Grama");
         this.parcela = false;
@@ -32,6 +29,7 @@ public class Grama extends Grounds{
         this.planta = null;
     }
 
+    //getters y setter de los atributos
     public static int getCantidadMaxExistente() {
         return cantidadMaxExistente;
     }
