@@ -8,6 +8,7 @@ import java.awt.event.*;
 import com.mycompany.modelos.grounds.*;
 import com.mycompany.modelos.plants.Plant;
 import com.mycompany.modelos.*;
+import com.mycompany.enums.PState;
 import com.mycompany.enums.SGround;
 import com.mycompany.frames.*;
 
@@ -59,7 +60,12 @@ public class SuperficieJButton extends JButton implements ActionListener{
                 }
             }else if(this.ground.isProcesando()){
                 if(this.ground instanceof Grama){
-                    JOptionPane.showMessageDialog(null, "insertar aqui hilo de creciento de plantas");
+                    /*if(this.ground.getPlanta().getStatus()==PState.COSECHA){
+
+                    }else{
+                        this.j.setGold(this.j.getGold()-20);
+
+                    }*/
                 }else if(this.ground instanceof Water){
                     JOptionPane.showMessageDialog(null, "insertar aqui el proceso de hilos de pescados y barcos");
 

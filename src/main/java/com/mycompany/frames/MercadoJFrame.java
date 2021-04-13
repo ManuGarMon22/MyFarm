@@ -78,7 +78,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
         semillas.setBounds(10, 80, 100, 30);
         base.add(semillas);
         
-        JLabel materiaPrima = new JLabel("Materia Prima:");
+        JLabel materiaPrima = new JLabel("Cuero:");
         materiaPrima.setBounds(10, 150, 200, 30);
         base.add(materiaPrima);
 
@@ -154,16 +154,6 @@ public class MercadoJFrame extends JFrame implements ActionListener{
         this.cria2.addActionListener(this);
         this.botones6.add(this.cria2);
 
-        this.barco = new JButton("Barco");
-        this.barco.setBounds(250, 460, 100, 30);
-        this.barco.addActionListener(this);
-        this.base.add(this.barco);
-
-
-        this.barco = new JButton("Barco");
-        this.barco.setBounds(250, 460, 100, 30);
-        this.barco.addActionListener(this);
-        this.base.add(this.barco);
         //boton Barco
 
         this.barco = new JButton("Barco");
@@ -204,7 +194,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
            this.setVisible(false);
         }else if(e.getSource() == this.barco){
             if (player.getGold()<precioBarco){
-                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion. Precio: "+this.precioBarco+" monedas");
             }else{
                 this.player.setGold(player.getGold()-this.precioBarco);
                 this.player.getBodega().setBarcos(player.getBodega().getBarcos()+1);
@@ -215,31 +205,130 @@ public class MercadoJFrame extends JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
             }else{
                 this.player.setGold(player.getGold()-this.precioAlimento);
-                this.player.getBodega().setBarcos(player.getBodega().getHerv1()+1);
+                this.player.getBodega().setHerv1(player.getBodega().getHerv1()+1);
             }
         }else if(e.getSource() == this.alimento2){
             if(player.getGold()<precioAlimento){
                 JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
             }else{
                 this.player.setGold(player.getGold()-this.precioAlimento);
-                this.player.getBodega().setBarcos(player.getBodega().getHerv2()+1);
+                this.player.getBodega().setHerv2(player.getBodega().getHerv2()+1);
             }
         }else if(e.getSource() == this.alimento3){
             if(player.getGold()<precioAlimento){
                 JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
             }else{
                 this.player.setGold(player.getGold()-this.precioAlimento);
-                this.player.getBodega().setBarcos(player.getBodega().getHerv3()+1);
+                this.player.getBodega().setHerv3(player.getBodega().getHerv3()+1);
+            }
+        }else if(e.getSource() == this.alimento4){
+            if(player.getGold()<precioAlimento){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioAlimento);
+                this.player.getBodega().setOmni1(player.getBodega().getOmni1()+1);
+            }
+        }else if(e.getSource() == this.alimento5){
+            if(player.getGold()<precioAlimento){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioAlimento);
+                this.player.getBodega().setOmni2(player.getBodega().getOmni2()+1);
+            }
+        }else if(e.getSource() == this.alimento6){
+            if(player.getGold()<precioAlimento){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioAlimento);
+                this.player.getBodega().setOmni3(player.getBodega().getOmni3()+1);
+            }
+        }else if(e.getSource() == this.comida1){
+            if(player.getGold()<precioComida){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioComida);
+                this.player.getBodega().setCarne(player.getBodega().getCarne()+1);
+            }
+        }else if(e.getSource() == this.comida2){
+            if(player.getGold()<precioComida){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioComida);
+                this.player.getBodega().setHuevos(player.getBodega().getHuevos()+1);
+            }
+        }else if(e.getSource() == this.comida3){
+            if(player.getGold()<precioComida){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioComida);
+                this.player.getBodega().setLeche(player.getBodega().getLeche()+1);
+            }
+        }else if(e.getSource() == this.ventaMP){
+            if(player.getBodega().getMP()<=0){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()+this.precioMPventa);
+                this.player.getBodega().setMP(player.getBodega().getMP()-1);
+            }
+        }else if(e.getSource() == this.compraMP){
+            if(player.getGold()<this.precioMP){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioMP);
+                this.player.getBodega().setMP(player.getBodega().getMP()+1);
+            }
+        }else if(e.getSource() == this.cria1){
+            if(player.getGold()<this.precioTernero){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioTernero);
+                this.player.getBodega().setTerneros(player.getBodega().getTerneros()+1);
+            }
+        }else if(e.getSource() == this.cria2){
+            if(player.getGold()<this.precioPollo){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioPollo);
+                this.player.getBodega().setPollo(player.getBodega().getPollo()+1);
+            }
+        }else if(e.getSource() == this.mejora1){
+            if(player.getGold()<this.precioFertilizantes){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioFertilizantes);
+                this.player.getBodega().setMejoraTierra1(player.getBodega().getMejoraTierra1()+1);
+            }
+        }else if(e.getSource() == this.mejora2){
+            if(player.getGold()<this.precioFertilizantes){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioFertilizantes);
+                this.player.getBodega().setMejoraTierra2(player.getBodega().getMejoraTierra2()+1);
+            }
+        }else if(e.getSource() == this.mejora3){
+            if(player.getGold()<this.precioFertilizantes){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.precioFertilizantes);
+                this.player.getBodega().setMejoraTierra3(player.getBodega().getMejoraTierra3()+1);
+            }
+        }else if(e.getSource() == this.semilla1){
+            if(player.getGold()<this.preciosemillas){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.preciosemillas);
+                this.player.getBodega().setGranos(player.getBodega().getGranos()+10);
+            }
+        }else if(e.getSource() == this.semilla2){
+            if(player.getGold()<this.preciosemillas){
+                JOptionPane.showMessageDialog(null, "No cuentas con dinero suficiente para realizar esta accion");
+            }else{
+                this.player.setGold(player.getGold()-this.preciosemillas);
+                this.player.getBodega().setFruta(player.getBodega().getFruta()+10);
             }
         }
 
-
-
-
-
-
-
-
+        
 
         this.oroLabel.setText("Oro disponible: "+this.player.getGold());
     }

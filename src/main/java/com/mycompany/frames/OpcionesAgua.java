@@ -76,9 +76,13 @@ public class OpcionesAgua extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == AgregarBarco){
-            this.terreno.setBarco(true);
-            this.AgregarBarco.setEnabled(false);
-            this.quitarBarco.setEnabled(true);
+            if (this.jugador.getBodega().getBarcos()>0){
+                this.terreno.setBarco(true);
+                this.AgregarBarco.setEnabled(false);
+                this.quitarBarco.setEnabled(true);
+            }else{
+                JOptionPane.showMessageDialog(null,"No cuentas con ningun barco en bodega");
+            }
         }else if( e.getSource() == quitarBarco){
             this.terreno.setBarco(false);
             this.AgregarBarco.setEnabled(true);

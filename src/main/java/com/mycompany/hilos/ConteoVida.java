@@ -2,6 +2,8 @@ package com.mycompany.hilos;
 
 
 import com.mycompany.modelos.*;
+import com.mycompany.myfarm.Game;
+
 import javax.swing.*;
 import com.mycompany.frames.*;
 
@@ -9,11 +11,14 @@ public class ConteoVida implements Runnable{
 
     private Player jugador;
     private Table table;
-    private int segundosParaRestarVida = 7;
+    private int segundosParaRestarVida = 1;
+    private Game juego;
+    private int minutos, segundos;
 
-    public ConteoVida(Player jugador, Table table){
+    public ConteoVida(Player jugador, Table table, Game game){
         this.jugador = jugador;
         this.table = table;
+        this.juego = game;
     }
 
     public void ActualizaVida(){
@@ -30,14 +35,21 @@ public class ConteoVida implements Runnable{
             this.table.getOroLabel().setText("Oro disponible:  " +this.jugador.getGold());
         }while(this.jugador.getVida()>0);
 
-        JOptionPane.showMessageDialog(null,"El Granjero ha muerto. Fin del Juego");
-
+        this.minutos = this.juego.getDuracion()/60;
+        this.segundos = this.juego.getDuracion()%60;
+        
+        JOptionPane.showMessageDialog(null,"Oh no! "+this.jugador.getNickname()+", has muerto. Fin del Juego\n La partida duro "+this.minutos+":"+this.segundos+" aproximadamente" );
+        JOptionPane.showMessageDialog(null,"Gracias por jugar" );
+        System.exit(0);
+        this.table.setVisible(false);
 
     }
+
 
     @Override
     public void run() {
         ActualizaVida();
+       
     }
     
 }

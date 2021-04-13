@@ -28,7 +28,7 @@ public class Table extends JFrame implements ActionListener {
     private Game juego;
     private JLabel vida;
     private JLabel oroLabel;
-    private JFrame mercado;
+    private JFrame mercadoFrame, bodegaFrame;
 
     
     
@@ -52,7 +52,7 @@ public class Table extends JFrame implements ActionListener {
         this.AgregarBotones();
         this.AgregarEtiqueta();
 
-        Runnable vidaRunnable = new ConteoVida(jugador, this);
+        Runnable vidaRunnable = new ConteoVida(jugador, this, juego);
         
         Thread hilosVida = new Thread(vidaRunnable);
 
@@ -75,12 +75,15 @@ public class Table extends JFrame implements ActionListener {
                 }
             }
         }else if(e.getSource() == Bodega){
+
+            this.bodegaFrame = new BodegaJFrame(this.jugador);
+            this.bodegaFrame.setVisible(true);
         
             this.juego.getPlayer().setGold(juego.getPlayer().getGold()+100);
            
         }else if(e.getSource() == mer){
-            this.mercado = new MercadoJFrame(this.jugador);
-            this.mercado.setVisible(true);
+            this.mercadoFrame = new MercadoJFrame(this.jugador);
+            this.mercadoFrame.setVisible(true);
         }
         this.oroLabel.setText("Oro disponible:  " +this.jugador.getGold());
     }

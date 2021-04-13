@@ -32,8 +32,10 @@ public class ManejadorGame{
         table = new Table( this.game);
         table.setVisible(true);
         
-       
+       Runnable r = new DuracionDePartida(game, JPrincipal);
 
+       Thread tiempo = new Thread(r);
+       tiempo.start();
 
     }
 

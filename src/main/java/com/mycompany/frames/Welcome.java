@@ -91,7 +91,7 @@ public class Welcome extends JFrame implements ActionListener {
         created = new JButton("Crear");//creamos el boton con el texto que llevara dentro
         created.setBounds(50, 400, 85, 30);//dimensionamos el boton
         created.addActionListener(this);//amplementamos accion al boton
-        b.add(created);//agregamos el boton al panel
+        //b.add(created);//agregamos el boton al panel
         
         //Boton crear
         close = new JButton("cerrar");//creamos el boton con el texto que llevara dentro

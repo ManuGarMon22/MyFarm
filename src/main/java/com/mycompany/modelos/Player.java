@@ -53,7 +53,11 @@ public class Player {
     }
 
     public void setVida(int vida) {
+        if(vida >100){
+            this.vida = 100;
+        }else{
         this.vida = vida;
+        }
     }
 
    public Bodega getBodega(){

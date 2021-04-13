@@ -1,13 +1,6 @@
 
 package com.mycompany.modelos;
 
-import com.mycompany.modelos.animals.Food;
-import com.mycompany.modelos.plants.*;
-
-import org.graalvm.compiler.java.BytecodeParserOptions_OptionDescriptors;
-
-
-
 public class Bodega {
     //comidas
     private int granos = 0;
@@ -31,7 +24,11 @@ public class Bodega {
     private int omni3 = 0;
 
     private int barcos = 0;
-  
+
+    private int MP = 0;
+
+    private int pollo = 0;
+    private int terneros = 0;
 
     public int getCuero() {
         return cuero;
@@ -137,6 +134,56 @@ public class Bodega {
     public void setBarcos(int barcos){
         this.barcos = barcos;
     }
+
+    public int getGranos() {
+        return granos;
+    }
+
+    public void setGranos(int granos) {
+        this.granos = granos;
+    }
+
+    public int getFruta() {
+        return fruta;
+    }
+
+    public void setFruta(int fruta) {
+        this.fruta = fruta;
+    }
+
+    public int getLeche() {
+        return leche;
+    }
+
+    public void setLeche(int leche) {
+        this.leche = leche;
+    }
+
+    public int getMP() {
+        return MP;
+    }
+
+    public void setMP(int mP) {
+        MP = mP;
+    }
+
+    public int getPollo() {
+        return pollo;
+    }
+
+    public void setPollo(int pollo) {
+        this.pollo = pollo;
+    }
+
+    public int getTerneros() {
+        return terneros;
+    }
+
+    public void setTerneros(int terneros) {
+        this.terneros = terneros;
+    }
+    
+    
     
 
     
