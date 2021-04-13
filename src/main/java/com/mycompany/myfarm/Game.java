@@ -14,6 +14,7 @@ public class Game {
     private boolean activo;
     
     private int oroGenerado;
+    private int oroGastado;
     private int alimentoGenerado;
     private int alimnetoConsumido;
     private int celdasCompradas;
@@ -122,6 +123,15 @@ public class Game {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
+
+    public int getOroGastado() {
+        return oroGastado;
+    }
+
+    public void setOroGastado(int oroGastado) {
+        this.oroGastado = oroGastado;
+    }
+    
     
     
     

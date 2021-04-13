@@ -33,7 +33,7 @@ public class SuperficieJButton extends JButton implements ActionListener{
                     this.ground = new Grama(this.j);       
                     super.setText(this.ground.getNombre());             
                 break;
-            case 2: super.setBackground(Color.BLUE);
+            case 2: super.setBackground(Color.CYAN);
                     this.ground = new Water(this.j);       
                     super.setText(this.ground.getNombre()); 
                 break;

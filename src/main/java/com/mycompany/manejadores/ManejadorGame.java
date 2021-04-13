@@ -5,9 +5,12 @@
  */
 package com.mycompany.manejadores;
 
+import javax.swing.JFrame;
+
 import com.mycompany.frames.Table;
 import com.mycompany.modelos.Player;
 import com.mycompany.myfarm.Game;
+
 import com.mycompany.hilos.*;
 
 /**
@@ -19,9 +22,11 @@ public class ManejadorGame{
     private Game game;
     private Player JPrincipal;
     private Table table ;
+    private JFrame x;
     
-    public ManejadorGame(Game juego){
+    public ManejadorGame(Game juego, JFrame x ){
         this.game = juego;
+        this.x = x;
         this.JPrincipal = this.game.getPlayer();
        
     }
@@ -29,7 +34,7 @@ public class ManejadorGame{
     
     public void starGame(){
         
-        table = new Table( this.game);
+        table = new Table(this.game, this.x);
         table.setVisible(true);
         
        Runnable r = new DuracionDePartida(game, JPrincipal);

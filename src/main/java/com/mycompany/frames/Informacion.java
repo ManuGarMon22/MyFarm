@@ -15,7 +15,8 @@ public class Informacion extends JPanel {
     
     public Informacion(){
         setLayout(null);
-        setBounds(0,0,0,0);
+        setBounds(0,0, 600, 600);
+        
         
         
         

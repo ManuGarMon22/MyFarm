@@ -6,6 +6,7 @@ import java.awt.event.*;
 
 
 import com.mycompany.modelos.Player;
+import com.mycompany.myfarm.*;
 
 
 
@@ -16,14 +17,15 @@ public class MercadoJFrame extends JFrame implements ActionListener{
     private int precioPollo=15, precioTernero= 25 ;
     
     private Player player;
+    private Game juego;
     private JLabel oroLabel;
     private JPanel base, botones1,botones2,botones3,botones4,botones5, botones6 ;
     private JButton volverButton, semilla1, semilla2, cria1, cria2, barco, alimento1, alimento2, alimento3 ;
     private JButton mejora1, mejora2, mejora3, comida1, comida2, comida3, compraMP, ventaMP,alimento4, alimento5, alimento6  ;
 
-    public MercadoJFrame(Player player){
+    public MercadoJFrame(Player player, Game juego){
         this.player = player;
-
+        this.juego = juego;
         setLayout(null);
         setTitle("Mercado");
         setBounds(0,0, 500, 550);
@@ -199,6 +201,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
                 this.player.setGold(player.getGold()-this.precioBarco);
                 this.player.getBodega().setBarcos(player.getBodega().getBarcos()+1);
                 this.precioBarco=+100;
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioBarco);
             }
         }else if(e.getSource() == this.alimento1){
             if(player.getGold()<precioAlimento){
@@ -206,6 +209,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioAlimento);
                 this.player.getBodega().setHerv1(player.getBodega().getHerv1()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioAlimento);
             }
         }else if(e.getSource() == this.alimento2){
             if(player.getGold()<precioAlimento){
@@ -213,6 +217,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioAlimento);
                 this.player.getBodega().setHerv2(player.getBodega().getHerv2()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioAlimento);
             }
         }else if(e.getSource() == this.alimento3){
             if(player.getGold()<precioAlimento){
@@ -220,6 +225,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioAlimento);
                 this.player.getBodega().setHerv3(player.getBodega().getHerv3()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioAlimento);
             }
         }else if(e.getSource() == this.alimento4){
             if(player.getGold()<precioAlimento){
@@ -227,6 +233,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioAlimento);
                 this.player.getBodega().setOmni1(player.getBodega().getOmni1()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioAlimento);
             }
         }else if(e.getSource() == this.alimento5){
             if(player.getGold()<precioAlimento){
@@ -234,6 +241,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioAlimento);
                 this.player.getBodega().setOmni2(player.getBodega().getOmni2()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioAlimento);
             }
         }else if(e.getSource() == this.alimento6){
             if(player.getGold()<precioAlimento){
@@ -241,6 +249,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioAlimento);
                 this.player.getBodega().setOmni3(player.getBodega().getOmni3()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioAlimento);
             }
         }else if(e.getSource() == this.comida1){
             if(player.getGold()<precioComida){
@@ -248,6 +257,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioComida);
                 this.player.getBodega().setCarne(player.getBodega().getCarne()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioComida);
             }
         }else if(e.getSource() == this.comida2){
             if(player.getGold()<precioComida){
@@ -255,6 +265,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioComida);
                 this.player.getBodega().setHuevos(player.getBodega().getHuevos()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioComida);
             }
         }else if(e.getSource() == this.comida3){
             if(player.getGold()<precioComida){
@@ -262,6 +273,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioComida);
                 this.player.getBodega().setLeche(player.getBodega().getLeche()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioComida);
             }
         }else if(e.getSource() == this.ventaMP){
             if(player.getBodega().getMP()<=0){
@@ -269,6 +281,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()+this.precioMPventa);
                 this.player.getBodega().setMP(player.getBodega().getMP()-1);
+                this.juego.setOroGenerado(this.juego.getOroGenerado()+40);
             }
         }else if(e.getSource() == this.compraMP){
             if(player.getGold()<this.precioMP){
@@ -276,6 +289,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioMP);
                 this.player.getBodega().setMP(player.getBodega().getMP()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioMP);
             }
         }else if(e.getSource() == this.cria1){
             if(player.getGold()<this.precioTernero){
@@ -283,6 +297,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioTernero);
                 this.player.getBodega().setTerneros(player.getBodega().getTerneros()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioTernero);
             }
         }else if(e.getSource() == this.cria2){
             if(player.getGold()<this.precioPollo){
@@ -290,6 +305,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioPollo);
                 this.player.getBodega().setPollo(player.getBodega().getPollo()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioPollo);
             }
         }else if(e.getSource() == this.mejora1){
             if(player.getGold()<this.precioFertilizantes){
@@ -297,6 +313,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioFertilizantes);
                 this.player.getBodega().setMejoraTierra1(player.getBodega().getMejoraTierra1()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioFertilizantes);
             }
         }else if(e.getSource() == this.mejora2){
             if(player.getGold()<this.precioFertilizantes){
@@ -304,6 +321,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioFertilizantes);
                 this.player.getBodega().setMejoraTierra2(player.getBodega().getMejoraTierra2()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioFertilizantes);
             }
         }else if(e.getSource() == this.mejora3){
             if(player.getGold()<this.precioFertilizantes){
@@ -311,6 +329,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.precioFertilizantes);
                 this.player.getBodega().setMejoraTierra3(player.getBodega().getMejoraTierra3()+1);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.precioFertilizantes);
             }
         }else if(e.getSource() == this.semilla1){
             if(player.getGold()<this.preciosemillas){
@@ -318,6 +337,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.preciosemillas);
                 this.player.getBodega().setGranos(player.getBodega().getGranos()+10);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.preciosemillas);
             }
         }else if(e.getSource() == this.semilla2){
             if(player.getGold()<this.preciosemillas){
@@ -325,6 +345,7 @@ public class MercadoJFrame extends JFrame implements ActionListener{
             }else{
                 this.player.setGold(player.getGold()-this.preciosemillas);
                 this.player.getBodega().setFruta(player.getBodega().getFruta()+10);
+                this.juego.setOroGastado(this.juego.getOroGastado()+this.preciosemillas);
             }
         }
 

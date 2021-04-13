@@ -4,21 +4,24 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import com.mycompany.modelos.*;
+import com.mycompany.myfarm.Game;
 
 public class BodegaJFrame extends JFrame implements ActionListener {
 
     
     private Player player;
+    private Game game;
     private JLabel oroLabel;
     private JPanel base, botones1,botones2,botones3,botones4,botones5, botones6 ;
     private JButton volverButton, semilla1, semilla2, cria1, cria2, alimento1, alimento2, alimento3 ;
     private JButton mejora1, mejora2, mejora3, comida1, comida2, comida3, compraMP, ventaMP,alimento4, alimento5, alimento6  ;
 
-    public BodegaJFrame(Player player){
-        this.player = player;
+    public BodegaJFrame(Game j){
+        this.game = j;
+        this.player = j.getPlayer();
 
         setLayout(null);
-        setTitle("Mercado");
+        setTitle("Bodega");
         setBounds(0,0, 500, 550);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -193,9 +196,10 @@ public class BodegaJFrame extends JFrame implements ActionListener {
             if(player.getBodega().getCuero()<=0){
                 JOptionPane.showMessageDialog(null, "No cuentas con cuero para realizar vender");
             }else{
-                this.player.setGold(player.getGold()+20);
+                this.player.setGold(player.getGold()+40);
                 this.player.getBodega().setCuero(player.getBodega().getCuero()-1);
                 this.comida3.setText("Cuero  = " +this.player.getBodega().getCuero());
+                this.game.setOroGenerado(this.game.getOroGenerado()+40);
             }
         }
         this.oroLabel.setText("Oro disponible: "+this.player.getGold());

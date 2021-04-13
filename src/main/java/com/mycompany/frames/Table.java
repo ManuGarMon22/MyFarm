@@ -32,7 +32,7 @@ public class Table extends JFrame implements ActionListener {
 
     
     
-    public Table(Game l){
+    public Table(Game l, JFrame x){
         this.juego = l; 
         this.jugador = this.juego.getPlayer();
         this.setLayout(null); //metodo para iniciar la ventana
@@ -52,7 +52,7 @@ public class Table extends JFrame implements ActionListener {
         this.AgregarBotones();
         this.AgregarEtiqueta();
 
-        Runnable vidaRunnable = new ConteoVida(jugador, this, juego);
+        Runnable vidaRunnable = new ConteoVida(jugador, this, juego,x);
         
         Thread hilosVida = new Thread(vidaRunnable);
 
@@ -69,20 +69,20 @@ public class Table extends JFrame implements ActionListener {
             }else{    
                 this.suelo.HablitiarNuevaCasilla();
                 this.jugador.setGold(jugador.getGold()-100);
+                this.juego.setCeldasCompradas(this.juego.getCeldasCompradas()+1);
                 
                 if(this.suelo.getCasillasHabilitadas()>=60){
                     this.ComprarTerreno.setEnabled(false);
                 }
             }
         }else if(e.getSource() == Bodega){
-
-            this.bodegaFrame = new BodegaJFrame(this.jugador);
+            this.bodegaFrame = new BodegaJFrame(juego);
             this.bodegaFrame.setVisible(true);
         
             this.juego.getPlayer().setGold(juego.getPlayer().getGold()+100);
            
         }else if(e.getSource() == mer){
-            this.mercadoFrame = new MercadoJFrame(this.jugador);
+            this.mercadoFrame = new MercadoJFrame(this.jugador, this.juego);
             this.mercadoFrame.setVisible(true);
         }
         this.oroLabel.setText("Oro disponible:  " +this.jugador.getGold());

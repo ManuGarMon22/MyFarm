@@ -14,6 +14,9 @@ public class Welcome extends JFrame implements ActionListener {
     private JButton acepted, created, close;
     private JTextField fieldName, fieldNick;
     private String name = "", nick = "";
+    private Game[] game = new Game[10];
+    private ManejadorGame[] manejadorJuegos = new ManejadorGame[10];
+    private int i = 0;
     
     public Welcome(){
        
@@ -73,7 +76,7 @@ public class Welcome extends JFrame implements ActionListener {
         b.add(textNick);// agregamos a ventana
         
         //etiqueta donde esta el logo
-        ImageIcon imagelogo = new ImageIcon("logo.png");//definimos el icon para obtener el logo
+        ImageIcon imagelogo = new ImageIcon(getClass().getResource("/com/mycompany/images/logo.png"));//definimos el icon para obtener el logo
         logo = new JLabel(imagelogo);//creamos la etiqueta con la imagen dentor de esta
         logo.setBounds(143, 25, 232, 150);//definimos lugar donde aparece y dimensiones dentro de panel base 
         logo.setIcon(new ImageIcon(imagelogo.getImage().getScaledInstance(logo.getWidth(),logo.getHeight(), Image.SCALE_SMOOTH)));//redimensionamos la imagen al tamaño de la etiqueta
@@ -88,10 +91,10 @@ public class Welcome extends JFrame implements ActionListener {
         b.add(acepted);//agregamos el boton al panel
         
         //Boton crear
-        created = new JButton("Crear");//creamos el boton con el texto que llevara dentro
-        created.setBounds(50, 400, 85, 30);//dimensionamos el boton
+        created = new JButton("Reportes");//creamos el boton con el texto que llevara dentro
+        created.setBounds(50, 400, 100, 30);//dimensionamos el boton
         created.addActionListener(this);//amplementamos accion al boton
-        //b.add(created);//agregamos el boton al panel
+        b.add(created);//agregamos el boton al panel
         
         //Boton crear
         close = new JButton("cerrar");//creamos el boton con el texto que llevara dentro
@@ -106,17 +109,26 @@ public class Welcome extends JFrame implements ActionListener {
         if(e.getSource()== acepted){
             this.name = fieldName.getText().trim();
             this.nick = fieldNick.getText().trim();
-            
+
+            this.fieldName.setText("");
+            this.fieldNick.setText("");
+
             if(this.name.equals("") || this.nick.equals("")){
                 JOptionPane.showMessageDialog(null, "Debes llenar ambos campos para continuar");
             }else{
                 this.setVisible(false);
-                Game game = new Game(this.name, this.nick);
-                ManejadorGame juego= new ManejadorGame(game);
-                juego.starGame();
+                game[i] = new Game(this.name, this.nick);
+                manejadorJuegos[i]= new ManejadorGame(game[i], this);
+                manejadorJuegos[i].starGame();
+                i++;
             }
+
+
         }else if( e.getSource() == this.close){
             System.exit(0);
+        }else if (e.getSource() == created){
+            JFrame reportes = new VentanaReportes(this.game,this.i);
+            reportes.setVisible(true);
         }
     }
 }
