@@ -60,7 +60,7 @@ public class OpcionesGrama extends JFrame implements ActionListener{
         this.baseTerrenos = new JPanel();
         this.baseTerrenos.setLayout(null);
         this.baseTerrenos.setBounds(10, 80, 480, 300);
-        this.base.add(this.baseTerrenos)
+        this.base.add(this.baseTerrenos);
         
         JLabel semillas = new JLabel("Haga click en la opcion que desea:");
         semillas.setBounds(10, 80, 300, 30);

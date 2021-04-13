@@ -59,7 +59,7 @@ public class VentanaReportes extends JFrame implements ActionListener{
             reportes.append("\nNombre de Granjero: " +this.juegos[i].getPlayer().getNickname());
             reportes.append("\nDuracion de Partida: "+this.juegos[i].getDuracion()+" segundos");
             reportes.append("\nOro gastado durante la partida: "+this.juegos[i].getOroGastado());
-            reportes.append("\nOro generado durante la partida: "+this.juegos[i].getOroGenerado();
+            reportes.append("\nOro generado durante la partida: "+this.juegos[i].getOroGenerado());
 
 
         }
